@@ -1,5 +1,5 @@
 # Stereo-Camera-Calibration
-This is for calibrating stereo camera systems with radial or barrel lens distortion, and returning an image with no distortion. To do so, you must take pictures of a 8x5 checkerboard at various positions with uncalibrated_camera.py. Other board dimensions work, but values must be changed accordingly. 
+This is for calibrating stereo camera systems with radial or barrel lens distortion, and returning a corrected image with no distortion. To do so, you must take pictures of a 8x5 checkerboard at various positions with uncalibrated_camera.py. Other board dimensions work, but values must be changed accordingly. 
 
 # uncalibrated_camera.py
 This file opens the camera as it is, with distortion present in order to take images that will be calibrated later to create the calibrated video as well as to create a depth map. Press 'q' to quit and 's' to take a picture.
