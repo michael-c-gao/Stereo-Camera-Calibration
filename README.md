@@ -9,7 +9,7 @@ After taking several pictures (10 or more) with uncalibrated_camera.py, run this
 will be saved in a npz file for use in calibrated_camera.py.
 
 # calibrated-camera.py
-calibrated_camera.py returns the undistorted image of uncalibrated_camera.py. It does so by taking the matrix values from fundamental_matrix.py and corrrecting them.
+calibrated_camera.py shows the undistorted live video from the camera. It does so by taking the matrix values from fundamental_matrix.py and corrrecting them.
 
 # undistort_picture.py
 This takes a distorted jpg, undistorts it, and returns it as a png for use in a depth map.
