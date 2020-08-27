@@ -2,17 +2,19 @@ import cv2
 
 def main():
 
-    cap = cv2.VideoCapture(1)
+    vid = cv2.VideoCapture(1)
+    vid.set(3, 1920)
+    vid.set(4, 1080)
     id = 1
     while(True):
 
-        ret, frame = cap.read()
+        ret, frame = vid.read()
         height, width, channel = frame.shape
         left = frame[:, :int(width/2), :]
         right = frame[:, int(width/2):, :]
 
-        cv2.imshow('loft', left)
-        cv2.imshow('roght', right)
+        cv2.imshow('left', left)
+        cv2.imshow('right', right)
 
         n = cv2.waitKey(1) & 0xFF
         if n == ord('s'):
@@ -24,7 +26,7 @@ def main():
 
 
 
-    cap.release()
+    vid.release()
 
     cv2.destroyAllWindows()
 
