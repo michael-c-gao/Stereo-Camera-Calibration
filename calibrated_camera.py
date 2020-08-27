@@ -13,11 +13,13 @@ def main():
     dist1 = data['dist1']
     mtx2 = data['mat2']
     dist2 = data['dist2']
-    photo_ctr = 1
+    id = 1
     count = 0
+
     while True:
 
         ret, frame = vid.read()
+
 
 
         if ret:
@@ -41,15 +43,15 @@ def main():
 
 
 
-            n=cv2.waitKey(1) & 0xFF
-            # s keyboard character == save image
-            if n == ord('s'):
-                cv2.imwrite('undistortedleft'+str(id) + '.jpg',limg)
-                cv2.imwrite('undistortedright' + str(id) + '.jpg',rimg)
-                photo_ctr =  photo_ctr +1
-            #n keyboard character == exit cameras
-            if n == ord('q'):
-                break
+        n = cv2.waitKey(1) & 0xFF
+        # s keyboard character == save image
+        if n == ord('s'):
+            cv2.imwrite('undistortedleft'+str(id) + '.jpg',limg)
+            cv2.imwrite('undistortedright' + str(id) + '.jpg',rimg)
+            id = id+1
+        #n keyboard character == exit cameras
+        if n == ord('q'):
+            break
 
 
 
@@ -58,4 +60,6 @@ def main():
     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
+    main()
+
     main()
