@@ -123,7 +123,7 @@ class StereoCalibration(object):
                              ('rvecs2', self.r2), ('R', R), ('T', T),
                              ('E', E), ('F', F)])
 
-        np.savez('stereocamera.npz', mat1=M1, dist1=d1, mat2=M2, dist2=d2, Rcam=R, Tcam=T, Ecam=E, Fcam=F)
+        np.savez('stereocamera.npz', mat1=M1, dist1=d1, mat2=M2, dist2=d2)
 
         cv2.destroyAllWindows()
         return camera_model
