@@ -5,6 +5,8 @@ criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 def main():
     #call camera
     vid = cv2.VideoCapture(1)
+    vid.set(3, 1920)
+    vid.set(4, 1080)
     #load fundamentral matrix data
     data = np.load('stereocamera.npz')
     mtx1 = data['mat1']
