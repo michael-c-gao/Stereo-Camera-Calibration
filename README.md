@@ -11,8 +11,5 @@ will be saved in a npz file for use in calibrated_camera.py.
 # calibrated-camera.py
 calibrated_camera.py shows the undistorted live video from the camera, and allows you to take calibrated pictures. It does so by taking the matrix values from fundamental_matrix.py and corrrecting them.
 
-# undistort_picture.py
-This takes a distorted jpg taken in uncalibrated_camera.py, undistorts it, and returns it as a png for use in a depth map.
-
 # depth_map.py
-select 2 calibrated pics (either from c-c.py or u-p.py) and generates a depth map based on them.
+select 2 calibrated pics (taken with c-c.py) and generates a depth map based on them.
