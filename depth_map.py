@@ -39,20 +39,23 @@ def main():
     imgR = cv.imread('folder_calib_cam/undistortedright1.jpg')
 
 
-    window_size = 2
-    min_disp =2
-    max_disp = 34
-    num_disp = max_disp-min_disp
-    stereo = cv.StereoSGBM_create(minDisparity = min_disp,
-        numDisparities = num_disp,
-        blockSize = 1,
-        P1 = 8*3*window_size**2,
-        P2 = 32*3*window_size**2,
-        disp12MaxDiff = 1,
-        uniquenessRatio = 7,
-        speckleWindowSize = 120,
-        speckleRange = 1
-    )
+    window_size = 0
+    min_disp = -10
+    max_disp = 35
+
+    num_disp = (max_disp - min_disp)
+    stereo = cv.StereoSGBM_create(minDisparity=min_disp,
+                                   numDisparities=num_disp,
+                                   blockSize=2,
+                                   uniquenessRatio=2,
+                                   speckleWindowSize=2,
+                                   speckleRange=2,
+                                   disp12MaxDiff=1,
+                                   P1=8 * 3 * window_size ** 2,  # 8*3*win_size**2,
+                                   P2=32 * 3 * window_size ** 2)  # 32*3*win_size**2)
+
+    # Compute disparity map
+    print("\nComputing the disparity  map...")
 
     print('computing disparity...')
     disp = stereo.compute(imgL, imgR).astype(np.float32) / 16.0
@@ -85,4 +88,5 @@ if __name__ == '__main__':
     print(__doc__)
     main()
     cv.destroyAllWindows()
+
 
