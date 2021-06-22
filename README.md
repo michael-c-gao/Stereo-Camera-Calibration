@@ -13,3 +13,5 @@ calibrated_camera.py shows the undistorted live video from the camera, and allow
 
 # depth_map.py
 select 2 calibrated pics (taken with c-c.py) and generates a depth map based on them.
+
+![stereocamera](stereocamera.png)
